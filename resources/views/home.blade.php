@@ -21,7 +21,7 @@
                         <li><a href="#">Items</a></li>
                         <li><a href="#">Customers</a></li>
                         @if(Auth::check())
-                            <li><a href="{{route('admin.index')}}">Users</a></li>
+                            <li><a href="{{route('users.index')}}">Users</a></li>
                         @else
                             <li><a href="/login">Login</a></li>
                         @endif
