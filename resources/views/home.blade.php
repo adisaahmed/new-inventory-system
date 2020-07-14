@@ -1,33 +1,29 @@
 <x-home-master>
     @section('content')
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Inventory System</a>
-                </div>
+        <div class="home_banner" id="home_banner"></div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
 
-                        <li><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="#">Items</a></li>
-                        <li><a href="#">Customers</a></li>
-                        @if(Auth::check())
-                            <li><a href="{{route('users.index')}}">Users</a></li>
-                        @else
-                            <li><a href="/login">Login</a></li>
-                        @endif
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+
+        <script>
+            function randomImage(){
+              var images = [
+               '../images/homebanner_1.jpg',
+               '../images/homebanner_2.jpg',
+               '../images/homebanner_3.jpg',
+               '../images/homebanner_4.jpg',
+               '../images/homebanner_5.jpg',
+               '../images/homebanner_6.jpg',
+               '../images/homebanner_7.jpg'];
+              var size = images.length;
+              var x = Math.floor(size * Math.random());
+              console.log(x);
+              var element = document.getElementsByClassName('home_banner');
+              console.log(element);
+              // document.getElementById("home_banner").style.height="1000px";
+              document.getElementById("home_banner").style.backgroundImage = "url("+images[x] +")";
+            }
+
+            document.addEventListener("DOMContentLoaded", randomImage);
+        </script>
     @endsection
 </x-home-master>
