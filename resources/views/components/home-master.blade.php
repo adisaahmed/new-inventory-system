@@ -38,9 +38,9 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="#">Items</a></li>
-                    <li><a href="#">Customers</a></li>
                     @if(Auth::check())
+                        <li><a href="#">Items</a></li>
+                        <li><a href="#">Customers</a></li>
                         <li><a href="{{route('users.index')}}">Users</a></li>
                     @else
                         <li><a href="/login">Login</a></li>
